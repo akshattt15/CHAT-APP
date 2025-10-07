@@ -17,14 +17,14 @@ const httpServer = createServer(app);
 // ✅ Initialize Socket.io
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://chatttyyyy.netlify.app"],
     methods: ["GET", "POST"],
   },
 });
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173",  // your React app
+  origin: ["http://localhost:5173", "https://chatttyyyy.netlify.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true, // allow cookies/auth headers if needed
 }));
